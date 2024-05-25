@@ -92,7 +92,7 @@ public class Fachada implements ar.edu.utn.dds.k3003.facades.FachadaLogistica {
     RetiroDTO retiroDTO = new RetiroDTO(trasladoDTO.getQrVianda(),"",trasladoDTO.getFechaTraslado(),trasladoDTO.getHeladeraOrigen());
     fachadaheladeras.retirar(retiroDTO);
     fachadaViandas.modificarEstado(trasladoDTO.getQrVianda(), EstadoViandaEnum.EN_TRASLADO);
-    trasladoRepository.save(new Traslado(trasladoDTO.getQrVianda(),rutaDeTraslado,EstadoTrasladoEnum.ENPROGRSO,trasladoDTO.getFechaTraslado()));
+    trasladoRepository.save(new Traslado(trasladoDTO.getQrVianda(),rutaDeTraslado,EstadoTrasladoEnum.EN_VIAJE,trasladoDTO.getFechaTraslado()));
 
   }
 
@@ -104,7 +104,7 @@ public class Fachada implements ar.edu.utn.dds.k3003.facades.FachadaLogistica {
     fachadaheladeras.depositar(trasladoDTO.getHeladeraDestino(),trasladoDTO.getQrVianda());
     fachadaViandas.modificarHeladera(trasladoDTO.getQrVianda(),trasladoDTO.getHeladeraDestino());
     fachadaViandas.modificarEstado(trasladoDTO.getQrVianda(), EstadoViandaEnum.DEPOSITADA);
-    trasladoRepository.save(new Traslado(trasladoDTO.getQrVianda(),rutaDeTraslado,EstadoTrasladoEnum.TERMINADO,trasladoDTO.getFechaTraslado()));
+    trasladoRepository.save(new Traslado(trasladoDTO.getQrVianda(),rutaDeTraslado,EstadoTrasladoEnum.ENTREGADO,trasladoDTO.getFechaTraslado()));
 
   }
 }

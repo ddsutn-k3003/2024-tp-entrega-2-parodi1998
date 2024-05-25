@@ -39,7 +39,8 @@ public class RutaRepository {
     if(!posiblesRutas.isEmpty()) {
       return posiblesRutas;
     }else{
-      throw new TrasladoNoAsignableException();
+      return null;
+      //throw new TrasladoNoAsignableException();
     }
 
 

@@ -9,7 +9,7 @@ public class TrasladoMapper {
     TrasladoDTO trasladoDTO = new TrasladoDTO(traslado.getQrVianda(),traslado.getRuta().getHeladeraIdOrigen(),
         traslado.getRuta().getHeladeraIdDestino());
 
-    trasladoDTO.setEstado(traslado.getEstado());
+    trasladoDTO.setStatus(traslado.getEstado());
     trasladoDTO.setId(traslado.getId());
     trasladoDTO.setColaboradorId(traslado.getRuta().getColaboradorId());
 
